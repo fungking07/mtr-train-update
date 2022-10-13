@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-hant">
 
 <head>
   <meta charset="utf-8" />
@@ -23,61 +23,59 @@
 </head>
 
 <body>
-
   <div class="container-fluid">
     <h1 class="text-center title">
-      Train time of <span id="sta_name">MTR</span> Station
+      <span id="sta_name">港鐵</span>站列車到達時間
     </h1>
     <hr />
-    <span class="time">Time now is: <span id="time"></span></span>
+    <span class="time">現在時間: <span id="time"></span></span>
     <hr />
     <select id="line">
-      <option value="">-- Please Select a Line--</option>
-      <option value="AEL">Airport Express</option>
-      <option value="TCL">Tung Chung Line</option>
-      <option value="TML">Tuen Ma Line</option>
-      <option value="TKL">Tseung Kwan O Line</option>
-      <option value="EAL">East Rail Line</option>
+      <option value="">-- 請選擇路線--</option>
+      <option value="AEL">機場快綫</option>
+      <option value="TCL">東涌綫</option>
+      <option value="TML">屯馬綫</option>
+      <option value="TKL">將軍澳綫</option>
+      <option value="EAL">東鐵綫</option>
     </select>
     <select id="station" hidden></select>
-    <button type="sumbit" class="btn btn-primary" id="submitBtn" onclick="getMTRUpdate()" hidden>Get Arrival
-      time</button>
+    <button type="sumbit" class="btn btn-primary" id="submitBtn" onclick="getMTRUpdate()" hidden>取得列車到達時間</button>
     <hr />
-    <h3 class="text-center title">UPWARD</h3>
+    <h3 class="text-center title">上行</h3>
     <table class="table table-striped table-dark">
       <thead>
         <tr>
-          <th>Train No.</th>
-          <th>Time</th>
-          <th>Destination</th>
-          <th>Platform</th>
-          <th>Time to next train</th>
+          <th>車序</th>
+          <th>到站時間</th>
+          <th>目的地</th>
+          <th>月台</th>
+          <th>下班車到站時間</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Train 1</td>
+          <td>列車 1</td>
           <td id="up-train1-time"></td>
           <td id="up-train1-dest"></td>
           <td id="up-train1-plat"></td>
           <td id="up-train1-ttnt"></td>
         </tr>
         <tr>
-          <td>Train 2</td>
+          <td>列車 2</td>
           <td id="up-train2-time"></td>
           <td id="up-train2-dest"></td>
           <td id="up-train2-plat"></td>
           <td id="up-train2-ttnt"></td>
         </tr>
         <tr>
-          <td>Train 3</td>
+          <td>列車 3</td>
           <td id="up-train3-time"></td>
           <td id="up-train3-dest"></td>
           <td id="up-train3-plat"></td>
           <td id="up-train3-ttnt"></td>
         </tr>
         <tr>
-          <td>Train 4</td>
+          <td>列車 4</td>
           <td id="up-train4-time"></td>
           <td id="up-train4-dest"></td>
           <td id="up-train4-plat"></td>
@@ -86,41 +84,41 @@
       </tbody>
     </table>
     <hr />
-    <h3 class="text-center title">DOWNWARD</h3>
+    <h3 class="text-center title">下行</h3>
     <table class="table table-striped table-dark">
       <thead>
         <tr>
-          <th>Train No.</th>
-          <th>Time</th>
-          <th>Destination</th>
-          <th>Platform</th>
-          <th>Time to next train</th>
+          <th>車序</th>
+          <th>到站時間</th>
+          <th>目的地</th>
+          <th>月台</th>
+          <th>下班車到站時間</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Train 1</td>
+          <td>列車 1</td>
           <td id="down-train1-time"></td>
           <td id="down-train1-dest"></td>
           <td id="down-train1-plat"></td>
           <td id="down-train1-ttnt"></td>
         </tr>
         <tr>
-          <td>Train 2</td>
+          <td>列車 2</td>
           <td id="down-train2-time"></td>
           <td id="down-train2-dest"></td>
           <td id="down-train2-plat"></td>
           <td id="down-train2-ttnt"></td>
         </tr>
         <tr>
-          <td>Train 3</td>
+          <td>列車 3</td>
           <td id="down-train3-time"></td>
           <td id="down-train3-dest"></td>
           <td id="down-train3-plat"></td>
           <td id="down-train3-ttnt"></td>
         </tr>
         <tr>
-          <td>Train 4</td>
+          <td>列車 4</td>
           <td id="down-train4-time"></td>
           <td id="down-train4-dest"></td>
           <td id="down-train4-plat"></td>
@@ -129,14 +127,13 @@
       </tbody>
     </table>
     <hr>
-    <a href="./fetch_zh.html" class="btn btn-primary">往中文頁</a>
+    <a href="./fetch_en.html" class="btn btn-primary">To English Site</a>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>
-  <script src="./fetch_en.js"></script>
-
+  <script src="./fetch_zh.js"></script>
 </body>
 
 </html>
