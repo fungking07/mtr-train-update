@@ -4,31 +4,6 @@ const mtrUpdate = async function (line, station) {
   )
     .then((result) => result.json())
     .then((result) => {
-      var currentdate = new Date();
-      var datetime =
-        currentdate.getFullYear() +
-        "-" +
-        (currentdate.getMonth() + 1 < 10
-          ? "0" + (currentdate.getMonth() + 1)
-          : currentdate.getMonth() + 1) +
-        "-" +
-        (currentdate.getDate() < 10
-          ? "0" + currentdate.getDate()
-          : currentdate.getDate()) +
-        " " +
-        (currentdate.getHours() < 10
-          ? "0" + currentdate.getHours()
-          : currentdate.getHours()) +
-        ":" +
-        (currentdate.getMinutes() < 10
-          ? "0" + currentdate.getMinutes()
-          : currentdate.getMinutes()) +
-        ":" +
-        (currentdate.getSeconds() < 10
-          ? "0" + currentdate.getSeconds()
-          : currentdate.getSeconds());
-
-      document.getElementById("time").innerHTML = datetime;
       for (var i = 0; i < 4; i++) {
         document.getElementById(`up-train${i + 1}-time`).innerHTML = "";
         document.getElementById(`up-train${i + 1}-dest`).innerHTML = "";
@@ -85,6 +60,8 @@ const mtrUpdate = async function (line, station) {
 };
 
 window.onload = function () {
+  setInterval(clock, 1000)
+
   var select = document.getElementById("line");
 
   function subMenu() {
@@ -116,9 +93,37 @@ window.onload = function () {
   }
 };
 
+const clock = () => {
+  var currentdate = new Date();
+  var datetime =
+    currentdate.getFullYear() +
+    "-" +
+    (currentdate.getMonth() + 1 < 10
+      ? "0" + (currentdate.getMonth() + 1)
+      : currentdate.getMonth() + 1) +
+    "-" +
+    (currentdate.getDate() < 10
+      ? "0" + currentdate.getDate()
+      : currentdate.getDate()) +
+    " " +
+    (currentdate.getHours() < 10
+      ? "0" + currentdate.getHours()
+      : currentdate.getHours()) +
+    ":" +
+    (currentdate.getMinutes() < 10
+      ? "0" + currentdate.getMinutes()
+      : currentdate.getMinutes()) +
+    ":" +
+    (currentdate.getSeconds() < 10
+      ? "0" + currentdate.getSeconds()
+      : currentdate.getSeconds());
+
+  document.getElementById("time").innerHTML = datetime;
+};
+
 var myInterval = null;
 
-const getMTRUpdate = async function () {
+const getMTRUpdate = function () {
   myInterval !== null ? clearInterval(myInterval) : (myInterval = null);
   var line = document.getElementById("line").value;
   var station = document.getElementById("station").value;
